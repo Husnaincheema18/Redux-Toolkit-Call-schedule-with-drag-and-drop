@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Heading from './components/Heading.jsx';
+import { dataObject } from './data.js';
+import ParentContainer from './components/ParentContainer.jsx';
 
-function App() {
+export default function App() {
+  const [employeeData, setEmployeeData] = useState(dataObject)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-gray-200">
+      <Heading heading="Call Schedule" description="Schedule all calls here by drag and drop" />
+      <div className="pr-2 pl-2">
+        <ParentContainer dataArray={employeeData} setEmployeeData={setEmployeeData}/>
+      </div>
     </div>
   );
 }
-
-export default App;
