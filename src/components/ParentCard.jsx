@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import { useDrop } from 'react-dnd';
-import ChildCard from "./ChildCard";
+import ChildCard from './ChildCard';
 
 export default function ParentCard ({label, tickets, totalTickets, onDrop}) {
   const [{ isOver }, drop] = useDrop(() => ({
